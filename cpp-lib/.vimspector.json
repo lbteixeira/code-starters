@@ -1,0 +1,44 @@
+{
+  "configurations": {
+    "Tests": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/tests/build/tests/project_name-tests",
+        "args": [],
+        "cwd": "${workspaceRoot}",
+        "stopAtEntry": true,
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb"
+      }
+    },
+    "Example1": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceFolder}/examples/build/examples/example1/example1",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": true,
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb"
+      }
+    },
+    "Example2": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceFolder}/examples/build/examples/example2/example2",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": true,
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb"
+      }
+    }
+  }
+}
+
