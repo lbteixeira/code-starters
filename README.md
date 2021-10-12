@@ -19,28 +19,24 @@ languages. The goal is to automate and to standardize the way I structure my
 projects, making it easy to start to implement new ideas.
 
 Each supported language has four basic pillars: a well defined directory
-structure, a build system and a unit testing framework (when applicable),
+structure, a build system, a couple of runnable examples and a unit testing
+framework (when applicable),
 
-### Built with
+### Usage
 
-Each language has a different structure, therefore different tools are needed.
-The build systems are written using [make](https://www.gnu.org/software/make/), and the used unit testing frameworks are:
+The easiest way to create a new project is by cloning this repository and
+running the bash script `new-project.sh` from the root directory. Before
+running the script for the first time, edit it to include your project's
+directory path (variable `PROJECTS_DIR`). The script is going to prompt you for a
+project's type, name and path.
 
-1. C++: [Catch2](https://github.com/catchorg/Catch2)
-2. Python: [Pytest](https://docs.pytest.org/en/6.2.x/)
+Alternatively, simply copy the folder relative to the desired project type and
+paste it in the pertinent path. Nevertheless, some variable might have to be
+renamed in the build system and/or testing framework to guarantee that
+everything works as expected.
 
-### Prerequisites
-
-Again, it depends on the language. For example: for C++, a compiler is
-obviously needed; for Python, it is a good idea to create a virtual environment
-and to install all the dependencies on it.
-
-### Installation
-
-If you want to create a Github repository for your project, a nice README file
-is something always good to have. If you want to create badges like the ones at
-the top of this file, I recommend that you use
-[Shields.io](https://shields.io/).
+More information about the template projects can be found in their specific
+folder.
 
 ### License
 
