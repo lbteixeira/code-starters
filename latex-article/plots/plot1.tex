@@ -1,0 +1,52 @@
+\documentclass[a4paper, 12pt]{article} \usepackage[paperwidth=14cm, paperheight=9cm, top=0cm, bottom=0cm, left=-0.5cm, right=0cm]{geometry}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=\linewidth,compat=1.17}
+\usepgfplotslibrary{units}
+
+\definecolor{clr1}{RGB}{0,0,255}
+\definecolor{clr2}{RGB}{218,124,48}
+\definecolor{clr3}{RGB}{62,150,81}
+\definecolor{pink}{RGB}{255,0,255}
+\definecolor{magenta}{RGB}{0,153,153}
+\definecolor{yellow}{RGB}{255,211,0}
+
+\begin{document}
+    \begin{tikzpicture}
+    \begin{axis}[
+        ylabel={Y Label}, xlabel={X Label},
+        use units, y unit=\textrm{\textdegree{C}}, x unit=h,
+        grid = major, grid style={dashed, gray!30},
+        width=13.5cm, height=9cm,
+        ymin=0, ymax=1.0,
+        xmin=0, xmax=1.0,
+        x tick label style={
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=1,
+            /tikz/.cd
+        },
+        y tick label style={
+            /pgf/number format/.cd,
+                1000 sep={},
+                fixed,
+                fixed zerofill,
+                precision=1,
+            /tikz/.cd
+          },
+        legend entries={First entry, Second entry},
+        legend style={font=\footnotesize},
+        legend pos= south east,
+        legend cell align = {left},
+   ]
+
+    \addplot[clr1, mark=o, mark size =3pt, mark repeat = 1, line width=1pt]
+        table[x index=0, y index=1] {../data/data.txt};
+
+    \addplot[brown, mark=square, mark size =3pt, mark repeat = 1, line
+        width=1pt] table[x index=0, y index=2] {../data/data.txt};
+
+    \end{axis}
+    \end{tikzpicture}
+\end{document}

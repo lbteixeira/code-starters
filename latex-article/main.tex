@@ -1,0 +1,68 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lipsum}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[1]
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepgfplotslibrary{units}
+\usepackage{subcaption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multirow}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{newtxtext,newtxmath}
+\usepackage{amssymb}
+\usepackage{mathtools,bm}
+\usepackage{mfirstuc}
+\usepackage{intcalc}
+
+\usepackage{hyperref}
+
+\usepackage[backend=biber, style=apa, citestyle=apa]{biblatex}
+\addbibresource{mybib.bib}
+
+\journal{International Journal of Sciences}
+\bibliographystyle{elsarticle-num}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Article title}
+
+\author[firstAddress,secondAddress]{Author 1\corref{correspAuthor}}
+\author[secondAddress]{Author 2}
+
+\address[firstAddress]{First address}
+\address[secondAddress]{Second address}
+\cortext[correspAuthor]{Corresponding author}
+
+\begin{abstract}
+    \lipsum[2-3]
+\end{abstract}
+
+\begin{keyword}
+    Keyword 1 \sep{} Keyword 2 \sep{} Keyword 3 \sep{} Keyword 4
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers{}
+
+\input{sections/list-symbols.tex}
+\input{sections/introduction.tex}
+\input{sections/section2.tex}
+\input{sections/section3.tex}
+\input{sections/conclusion.tex}
+
+\printbibliography{}
+
+\end{document}
