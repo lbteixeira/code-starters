@@ -1,0 +1,90 @@
+% Options to documentclass:
+% . Preprint: default option
+% . Review: increases line spaces
+% . 1p: 1+ journals with a text area of 13.5cm ×19.75cm, single column style
+% only.
+% . 3p: 3+ journals with a text area of 16.45cm ×21.9cm, single column style.
+% . 5p: 5+ with text area of 18.35cm ×24cm double column style only.
+% . twocolumn: should be used along with 3p option if the journal is 3+ with
+% the same text area as above, but double column style.
+\documentclass[review]{elsarticle}
+
+\usepackage{lipsum} % Fill lorem ipsum text
+
+\usepackage{lineno} % Line numbers
+\modulolinenumbers[1] % Frequency to print line numbers
+\usepackage{hyperref} % Hyperlinks
+\hypersetup{ % Configuration of hyperlinks
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={ARTICLE TITLE},
+    pdfauthor={AUTHOR},
+}
+
+% Draw plots (normally done in a separate file, to improve compilation time)
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepgfplotslibrary{units} % Include units in axis
+\usepackage{graphicx} % Enhanced graphics support
+\usepackage[dvipsnames]{xcolor} % Enhanced color support
+
+\usepackage{subcaption} % Makes subfigure and subtable environments available
+\usepackage{booktabs} % Draw tables
+\usepackage{multirow} % Makes multirows available in tables
+
+% Write algorithms in pseudocode format
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Additional mathematical symbols
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm} % Bold math symbols
+
+\usepackage{newtxtext,newtxmath} % New text and math font
+
+% Definition of the bibliographic style and the .bib file
+\usepackage[backend=biber, style=apa, citestyle=apa]{biblatex}
+\addbibresource{mybib.bib}
+
+\journal{JOURNAL NAME}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{ARTICLE TITLE}
+
+\author[firstAddress,secondAddress]{AUTHOR 1\corref{correspAuthor}}
+\ead{AUTHOR_1@EMAIL.com}
+
+\author[secondAddress]{AUTHOR 2}
+
+\address[firstAddress]{FIRST ADDRESS}
+\address[secondAddress]{SECOND ADDRESS}
+\cortext[correspAuthor]{Corresponding author}
+
+\begin{abstract}
+    \lipsum[2-3]
+\end{abstract}
+
+\begin{keyword}
+    KEYWORD 1 \sep{} KEYWORD 2 \sep{} KEYWORD 3 \sep{} KEYWORD 4
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers{}
+
+\input{sections/list-symbols.tex}
+\input{sections/introduction.tex}
+\input{sections/section2.tex}
+\input{sections/section3.tex}
+\input{sections/conclusion.tex}
+
+\printbibliography{}
+
+\end{document}

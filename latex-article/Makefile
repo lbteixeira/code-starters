@@ -1,4 +1,4 @@
-DOCUMENT=main
+DOCUMENT=article
 SHELL=/bin/bash
 
 .SILENT:
