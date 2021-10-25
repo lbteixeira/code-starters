@@ -14,7 +14,7 @@ read -p "Select the type of project ([c]pp-lib, [p]ython, [l]atex-article): " PR
 ################################# functions ###################################
 ###############################################################################
 creating(){
- echo Creating a new $1 named $2 in $3
+ echo Creating a new $1 named $2 at $3
 }
 
 exists(){
@@ -65,7 +65,8 @@ then
  read -e -p "Project's location: " -i $PROJECTS_DIR PROJECT_LOCATION
 
  creating cpp-library $PROJECT_NAME $PROJECT_LOCATION
- execute $PROJECT_LOCATION/$PROJECT_NAME create-cpp
+ FULL_PATH=$PROJECT_LOCATION/$PROJECT_NAME
+ execute $FULL_PATH create-cpp
 
 ###############################################################################
 ################################### python ####################################
@@ -85,7 +86,8 @@ then
  read -e -p "Folder's location: " -i $ARTICLE_DIR FOLDER_LOCATION
 
  creating "latex-article folder" $FOLDER_NAME $ARTICLE_DIR
- execute $FOLDER_LOCATION/$FOLDER_NAME create-latex
+ FULL_PATH=$FOLDER_LOCATION/$FOLDER_NAME
+ execute $FULL_PATH create-latex
 
 ###############################################################################
 #################################### error ####################################
