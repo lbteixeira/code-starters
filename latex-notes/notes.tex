@@ -8,10 +8,10 @@
 \maketitle{}
 
 \section{A section}
-\blindtext[1]{}
+\blindtext[2]{}
 
 \subsection{A subsection}
-\blindtext[1]{}
+\blindtext[2]{}
 
 Citing Equation~\ref{eq:sum}.
 
@@ -21,7 +21,7 @@ Citing Equation~\ref{eq:sum}.
 \end{equation}
 
 \section{Another section}
-\blindtext[1]{}
+\blindtext[2]{}
 
 \begin{table}[hbt!]
   \centering
@@ -38,4 +38,30 @@ Citing Equation~\ref{eq:sum}.
   \renewcommand{\arraystretch}{1}
 \end{table}
 
+\begin{algorithm}[hbt!]
+\caption{$\textrm{AlgorithmTitle}(q, P)$}
+\textit{Input.} Algorithm input. \\
+\textit{Output.} Algorithm output.
+\begin{algorithmic}[1]
+  \State{Draw a horizontal line $l_{0r}$ from $q$ to its left}\label{linea}
+    \State{Move from infinity to $q$, following $l_{0r}$, and count the number
+    $N$ of intersections of $l_{0r}$ with $P$}
+    \If{$N$ is odd}
+        \State{$q$ is inside $P$}
+    \Else{}
+        \State{$q$ is outside $P$}
+    \EndIf{}
+    \For{all edges $e_{ab}$ of $P$, where $a$ is the lower and $b$ is the upper
+      point}
+      \If{$a_{y} < q_{y}$ \textbf{and} $b_{y} > q_{y}$ \textbf{and}
+      Equation~\ref{eq:sum} is satisfied}\label{lineb}
+        \State{$N = N + 1$}
+      \EndIf{}
+    \EndFor{}
+\end{algorithmic}\label{alg:example}
+\end{algorithm}
+
+Citing lines~\ref{linea} and~\ref{lineb} of Algorithm~\ref{alg:example}.
+
 \end{document}
+
