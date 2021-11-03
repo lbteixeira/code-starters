@@ -1,4 +1,4 @@
-\documentclass[a4paper, twocolumn, 12pt]{article}
+\documentclass[a4paper, 12pt]{article}
 \usepackage{preamble}
 
 \begin{document}
@@ -8,10 +8,10 @@
 \maketitle{}
 
 \section{A section}
-\blindtext[2]{}
+\blindtext[1]{}
 
 \subsection{A subsection}
-\blindtext[2]{}
+\blindtext[1]{}
 
 Citing Equation~\ref{eq:sum}.
 
@@ -62,6 +62,21 @@ Citing Equation~\ref{eq:sum}.
 \end{algorithm}
 
 Citing lines~\ref{linea} and~\ref{lineb} of Algorithm~\ref{alg:example}.
+
+It is possible to include snippets from real code, like in Listing~\ref{list:snippet}.
+
+\begin{listing}[hbf!]
+  \caption{Code snippet}
+  \label{list:snippet}
+  \inputminted{cpp}{./snippets/hello.cpp}
+\end{listing}
+
+Explanation of code using highlighted syntax.
+
+\code{cpp}{double x, y;}{declaration without initialization}
+\code{cpp}{double x = 1.5;}{declaration with initialization}
+\code{cpp}{double x(1.5);}{declaration with initialization}
+\code{cpp}{const double x = 1.5;}{initializes a constant}
 
 \end{document}
 

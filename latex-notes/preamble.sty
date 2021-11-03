@@ -1,5 +1,7 @@
 \ProvidesPackage{preamble}
 
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
 \usepackage{blindtext}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -27,7 +29,12 @@
 \usepackage{algorithm}
 \usepackage{algorithmicx, algpseudocode}
 
+\usepackage{minted}
+\newcommand{\code}[3]{\mintinline{#1}{#2}~\dotfill{}~#3\\}
+\newcommand{\ucode}[2]{{#1}~\dotfill{}~#2\\}
+
 \makeatletter
 \setlength{\@fptop}{0pt}
 \setlength{\@fpbot}{0pt plus 1fil}
 \makeatother
+
