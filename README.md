@@ -44,6 +44,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-shield]: https://img.shields.io/github/license/lbteixeira/code-starters?style=for-the-badge
-[license-url]: https://github.com/lbteixeira/code-starters/blob/master/LICENSE.txt
+[license-url]: https://github.com/lbteixeira/code-starters/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/lucasbrederteixeira
+[linkedin-url]: https://linkedin.com/in/lb-teixeira
