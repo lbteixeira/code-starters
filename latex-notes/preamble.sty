@@ -16,6 +16,8 @@
     pdfauthor={AUTHOR},
 }
 
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
 \usepackage{booktabs} % Draw tables
 \usepackage{multirow} % Makes multirows available in tables
 
@@ -38,3 +40,31 @@
 \setlength{\@fpbot}{0pt plus 1fil}
 \makeatother
 
+\definecolor{vert}{RGB}{0,181,0}
+\definecolor{oran}{RGB}{223,74,0}
+\definecolor{viol}{RGB}{134,0,175}
+\definecolor{roug}{RGB}{215,15,0}
+
+\newtcolorbox[auto counter]{problem}[2][]{
+    colback=white,
+    colframe=roug,
+    colbacktitle=white!90!roug,
+    coltitle=black,
+    fonttitle=\bfseries, 
+    title=Problem~\thetcbcounter.\ #2,
+    enhanced,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    #1
+}
+
+\newtcolorbox[auto counter]{definition}[2][]{
+    colback=white,
+    colframe=vert,
+    colbacktitle=white!90!vert,
+    coltitle=black,
+    fonttitle=\bfseries, 
+    title=Definition~\thetcbcounter.\ #2,
+    enhanced,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    #1
+}
