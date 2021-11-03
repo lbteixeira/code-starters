@@ -1,0 +1,31 @@
+\ProvidesPackage{preamble}
+
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[total={170mm,257mm}, left=20mm, top=20mm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={ARTICLE TITLE},
+    pdfauthor={AUTHOR},
+}
+
+\usepackage{booktabs} % Draw tables
+\usepackage{multirow} % Makes multirows available in tables
+
+% Additional mathematical symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm} % Bold math symbols
+
+\usepackage{newtxtext,newtxmath} % New text and math font
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother

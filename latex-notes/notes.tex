@@ -1,0 +1,41 @@
+\documentclass[a4paper, twocolumn, 12pt]{article}
+\usepackage{preamble}
+
+\begin{document}
+
+\title{NOTES ON SOMETHING}
+\author{AUTHOR}
+\maketitle{}
+
+\section{A section}
+\blindtext[1]{}
+
+\subsection{A subsection}
+\blindtext[1]{}
+
+Citing Equation~\ref{eq:sum}.
+
+\begin{equation}
+\label{eq:sum}
+    a + b = c
+\end{equation}
+
+\section{Another section}
+\blindtext[1]{}
+
+\begin{table}[hbt!]
+  \centering
+  \renewcommand{\arraystretch}{1.1}
+  \caption{Table caption}
+  \begin{tabular}{p{0.3\linewidth}c{0.12\linewidth}c{0.12\linewidth}}
+   \toprule
+   \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+   \midrule
+   Description 1 & 0.1 & 1.0 \\
+   Description 2 & 0.2 & 2.0 \\
+  \bottomrule
+  \end{tabular}\label{tab:table}
+  \renewcommand{\arraystretch}{1}
+\end{table}
+
+\end{document}
