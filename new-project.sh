@@ -6,9 +6,10 @@
 # Default locations for the creation of new projects and articles
 PROJECTS_DIR="/home/lbteixeira/Projects"
 ARTICLE_DIR="/home/lbteixeira/Documents/papers/2022"
+DOCS_DIR="/home/lbteixeira/Documents"
 
 # Prompt the user for input
-read -p "Select the type of project ([c]pp-lib, [p]ython, [l]atex-article): " PROJECT
+read -p "Select the type of project ([c]pp-lib, [p]ython, [l]atex-article, latex-[n]otes): " PROJECT
 
 ###############################################################################
 ################################# functions ###################################
@@ -36,8 +37,12 @@ create-cpp(){
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-2.cpp
 }
 
-create-latex(){
+create-latex-article(){
  cp -r $PWD/latex-article $FULL_PATH
+}
+
+create-latex-notes(){
+ cp -r $PWD/latex-notes $FULL_PATH
 }
 
 execute(){
@@ -87,7 +92,19 @@ then
 
  creating "latex-article folder" $FOLDER_NAME $ARTICLE_DIR
  FULL_PATH=$FOLDER_LOCATION/$FOLDER_NAME
- execute $FULL_PATH create-latex
+ execute $FULL_PATH create-latex-article
+
+###############################################################################
+################################# latex-notes #################################
+###############################################################################
+elif [ $PROJECT == "n" ]
+then
+ read -p "Folder's name: " -i "notes" FOLDER_NAME
+ read -e -p "Folder's location: " -i $DOCS_DIR FOLDER_LOCATION
+
+ creating "latex-notes folder" $FOLDER_NAME $FOLDER_LOCATION
+ FULL_PATH=$FOLDER_LOCATION/$FOLDER_NAME
+ execute $FULL_PATH create-latex-notes
 
 ###############################################################################
 #################################### error ####################################
