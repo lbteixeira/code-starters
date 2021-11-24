@@ -14,7 +14,6 @@ option(PROJECT_BUILD_EXAMPLES "Build the examples" OFF)
 # Directories containing libraries
 # Each directory has its own CMakeLists.txt file
 add_subdirectory(src/libs/lib1)
-add_subdirectory(src/libs/lib2)
 
 # Submodules directories
 add_subdirectory(external/glfw)
