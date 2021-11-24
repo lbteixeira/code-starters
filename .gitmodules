@@ -1,0 +1,3 @@
+[submodule "cpp-app/external/glfw"]
+	path = cpp-app/external/glfw
+	url = https://github.com/glfw/glfw.git

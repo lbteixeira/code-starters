@@ -16,6 +16,9 @@ option(PROJECT_BUILD_EXAMPLES "Build the examples" OFF)
 add_subdirectory(src/libs/lib1)
 add_subdirectory(src/libs/lib2)
 
+# Submodules directories
+add_subdirectory(external/glfw)
+
 # Directory containing the executable
 add_subdirectory(src/project_name)
 
