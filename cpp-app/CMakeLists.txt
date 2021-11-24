@@ -20,7 +20,7 @@ add_subdirectory(src/libs/lib2)
 add_subdirectory(external/glfw)
 
 # Directory containing the executable
-add_subdirectory(src/project_name)
+add_subdirectory(src/${CMAKE_PROJECT_NAME})
 
 #Only build the tests if required
 if(PROJECT_BUILD_TESTS)
@@ -33,4 +33,16 @@ if(PROJECT_BUILD_EXAMPLES)
   add_subdirectory(examples/example1)
   add_subdirectory(examples/example2)
 endif()
+
+# Path to the include (.h, .hpp) files, relative to the current directory
+target_include_directories(
+  ${CMAKE_PROJECT_NAME}
+  PUBLIC external/glfw/include
+)
+
+# Path to the libraries (.a) to be linked
+target_link_directories(
+  ${CMAKE_PROJECT_NAME}
+  PUBLIC external/glfw/src
+)
 
