@@ -10,6 +10,14 @@ release:
 		cp build/release/compile_commands.json .
 		cmake --build ./build/release
 
+.PHONY: run-debug
+run-debug: debug
+		./build/debug/src/project_name/project_name
+
+.PHONY: run-release
+run-release: release
+		./build/release/src/project_name/project_name
+
 .PHONY: test-debug
 test-debug: debug
 		cmake -D CMAKE_CXX_COMPILER=g++ -D PROJECT_BUILD_TESTS="ON" -D CMAKE_BUILD_TYPE="Debug" -S . -B tests/build/
