@@ -1,12 +1,12 @@
 .PHONY: debug
 debug:
-		cmake -D CMAKE_CXX_COMPILER=g++ -D CMAKE_EXPORT_COMPILE_COMMANDS=1 -D CMAKE_BUILD_TYPE="Debug" -S . -B build/debug/
+		cmake -DGLFW_BUILD_DOCS=OFF -DGLFW_INSTALL=OFF -DGLFW_BUILD_EXAMPLES=OFF -D CMAKE_CXX_COMPILER=g++ -D CMAKE_EXPORT_COMPILE_COMMANDS=1 -D CMAKE_BUILD_TYPE="Debug" -S . -B build/debug/
 		cp build/debug/compile_commands.json .
 		cmake --build ./build/debug
 
 .PHONY: release
 release:
-		cmake -D CMAKE_CXX_COMPILER=g++ -D CMAKE_EXPORT_COMPILE_COMMANDS=1 -D CMAKE_BUILD_TYPE="Release" -S . -B build/release/
+		cmake -DGLFW_BUILD_DOCS=OFF -DGLFW_INSTALL=OFF -DGLFW_BUILD_EXAMPLES=OFF -D CMAKE_CXX_COMPILER=g++ -D CMAKE_EXPORT_COMPILE_COMMANDS=1 -D CMAKE_BUILD_TYPE="Release" -S . -B build/release/
 		cp build/release/compile_commands.json .
 		cmake --build ./build/release
 
