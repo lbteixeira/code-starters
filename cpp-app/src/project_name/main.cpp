@@ -4,13 +4,16 @@
 #include "lib1/namespace2/subtract.hpp"
 #include "hello.hpp"
 #include <GLFW/glfw3.h>
+#include <string>
 
 int main()
 {
   int i = 1;
   int j = 2;
-  project_name::sayHello();
+  const std::string* k;
+  k = project_name::sayHello();
 
+  std::cout << *k << std::endl;
   std::cout << lib1::namespace1::add(i, j) << std::endl;
   std::cout << lib1::namespace2::subtract(i, j) << std::endl;
 
