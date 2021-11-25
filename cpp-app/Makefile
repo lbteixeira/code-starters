@@ -30,16 +30,6 @@ test-release: release
 		cmake --build ./tests/build
 		./tests/build/tests/project_name-tests -s -r compact
 
-.PHONY: examples-debug
-examples-debug: debug
-		cmake -D PROJECT_BUILD_EXAMPLES="ON" -D CMAKE_BUILD_TYPE="Debug" -S . -B examples/build/
-		cmake --build ./examples/build
-
-.PHONY: examples-release
-examples-release: release
-		cmake -D PROJECT_BUILD_EXAMPLES="ON" -D CMAKE_BUILD_TYPE="Release" -S . -B examples/build/
-		cmake --build ./examples/build
-
 .PHONY: clean-debug
 clean-debug:
 		rm -rf build/debug/*
