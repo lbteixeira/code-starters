@@ -48,6 +48,14 @@ create-cpp-app(){
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-2.cpp
 }
 
+create-python(){
+ cp -r $PWD/python $FULL_PATH
+ mv $FULL_PATH/src/mypackage $FULL_PATH/src/$PROJECT_NAME
+ sed -i 's/mypackage/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test_1.py
+ sed -i 's/mypackage/'"$PROJECT_NAME"'/g' $FULL_PATH/examples/example1.py
+ sed -i 's/mypackage/'"$PROJECT_NAME"'/g' $FULL_PATH/setup.py
+}
+
 create-latex-article(){
  cp -r $PWD/latex-article $FULL_PATH
 }
@@ -103,7 +111,10 @@ elif [ $PROJECT == "p" ]
 then
  read -p "Project's name: " PROJECT_NAME
  read -e -p "Project's location: " -i $PROJECTS_DIR PROJECT_LOCATION
- echo "python"
+
+ creating python-project $PROJECT_NAME $PROJECT_LOCATION
+ FULL_PATH=$PROJECT_LOCATION/$PROJECT_NAME
+ execute $FULL_PATH create-python
 
 ###############################################################################
 ################################ latex-article ################################
