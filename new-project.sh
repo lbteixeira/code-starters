@@ -9,7 +9,7 @@ ARTICLE_DIR="/home/lbteixeira/Documents/papers/2022"
 DOCS_DIR="/home/lbteixeira/Documents"
 
 # Prompt the user for input
-read -p "Select the type of project ([c]pp-lib, [p]ython, [l]atex-article, latex-[n]otes): " PROJECT
+read -p "Select the type of project ([c]pp-lib, cpp-[a]pp, [p]ython, [l]atex-article, latex-[n]otes): " PROJECT
 
 ###############################################################################
 ################################# functions ###################################
@@ -34,6 +34,17 @@ create-cpp(){
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/namespace2/subtract.hpp
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/namespace2/subtract.cpp
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-1.cpp
+ sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-2.cpp
+}
+
+create-cpp-app(){
+ cp -r $PWD/cpp-app $FULL_PATH
+ sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/CMakeLists.txt
+ sed -i 's/project_name-tests/'$PROJECT_NAME-tests'/g' $FULL_PATH/Makefile
+ mv $FULL_PATH/src/project_name $FULL_PATH/src/$PROJECT_NAME
+ sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/hello.hpp
+ sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/hello.cpp
+ sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/main.cpp
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-2.cpp
 }
 
@@ -62,7 +73,7 @@ execute(){
 }
 
 ###############################################################################
-#################################### c++ ######################################
+################################## c++-lib ####################################
 ###############################################################################
 if [ $PROJECT == 'c' ]
 then
@@ -72,6 +83,18 @@ then
  creating cpp-library $PROJECT_NAME $PROJECT_LOCATION
  FULL_PATH=$PROJECT_LOCATION/$PROJECT_NAME
  execute $FULL_PATH create-cpp
+
+###############################################################################
+################################## c++-app ####################################
+###############################################################################
+elif [ $PROJECT == 'a' ]
+then
+ read -p "Project's name: " PROJECT_NAME
+ read -e -p "Project's location: " -i $PROJECTS_DIR PROJECT_LOCATION
+
+ creating cpp-app $PROJECT_NAME $PROJECT_LOCATION
+ FULL_PATH=$PROJECT_LOCATION/$PROJECT_NAME
+ execute $FULL_PATH create-cpp-app
 
 ###############################################################################
 ################################### python ####################################
