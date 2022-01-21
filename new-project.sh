@@ -35,6 +35,7 @@ create-cpp(){
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/src/$PROJECT_NAME/namespace2/subtract.cpp
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-1.cpp
  sed -i 's/project_name/'"$PROJECT_NAME"'/g' $FULL_PATH/tests/test-2.cpp
+ sed -i 's/libproject_name/'"lib$PROJECT_NAME"'/g' $FULL_PATH/tests/CMakeLists.txt
 }
 
 create-cpp-app(){

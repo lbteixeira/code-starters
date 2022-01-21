@@ -13,7 +13,10 @@ option(PROJECT_BUILD_EXAMPLES "Build the examples" OFF)
 
 # Directories containing libraries and executables
 # Each directory has its own CMakeLists.txt file
-add_subdirectory(src)
+if(NOT PROJECT_BUILD_TESTS)
+  #add_subdirectory(src/${CMAKE_PROJECT_NAME})
+  add_subdirectory(src)
+endif()
 
 # Only build the tests if required
 if(PROJECT_BUILD_TESTS)
