@@ -3,9 +3,9 @@
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{0.2cm}
 \usepackage{blindtext}
+\usepackage[left=20mm, right=20mm, top=10mm, bottom=15mm, includeheadfoot]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage[total={170mm,257mm}, left=20mm, top=20mm]{geometry}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -30,6 +30,7 @@
 \usepackage{newtxtext,newtxmath} % New text and math font
 \usepackage{algorithm}
 \usepackage{algorithmicx, algpseudocode}
+\usepackage{subcaption}
 
 \usepackage{minted}
 \newcommand{\code}[3]{\mintinline{#1}{#2}~\dotfill{}~#3\\}
@@ -50,7 +51,7 @@
     colframe=roug,
     colbacktitle=white!90!roug,
     coltitle=black,
-    fonttitle=\bfseries, 
+    fonttitle=\bfseries,
     title=Problem~\thetcbcounter.\ #2,
     enhanced,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
@@ -62,7 +63,7 @@
     colframe=vert,
     colbacktitle=white!90!vert,
     coltitle=black,
-    fonttitle=\bfseries, 
+    fonttitle=\bfseries,
     title=Definition~\thetcbcounter.\ #2,
     enhanced,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
