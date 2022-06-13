@@ -1,8 +1,9 @@
 #include <catch2/catch.hpp>
-#include "project_name/namespace1/add.hpp"
+#include "project_name/file1.hpp"
 
 TEST_CASE("Test case 1", "[tag1]"){
   SECTION("First section"){
-    REQUIRE(project_name::namespace1::add(1, 1) == 2);
+    int dummy = project_name::function2();
+    REQUIRE(dummy == 111);
   }
 }

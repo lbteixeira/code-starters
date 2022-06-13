@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21.3)
+cmake_minimum_required(VERSION 3.16.0)
 
 # Project's name
 project(project_name VERSION 0.0.1)
@@ -13,19 +13,19 @@ option(PROJECT_BUILD_EXAMPLES "Build the examples" OFF)
 
 # Directories containing libraries and executables
 # Each directory has its own CMakeLists.txt file
-if(NOT PROJECT_BUILD_TESTS)
-  #add_subdirectory(src/${CMAKE_PROJECT_NAME})
+#if(NOT PROJECT_BUILD_TESTS)
   add_subdirectory(src)
-endif()
+#endif()
 
-# Only build the tests if required
+# Only builds the tests if required
 if(PROJECT_BUILD_TESTS)
   add_subdirectory(tests)
 endif()
 
-# Only build the examples if required
+# Only builds the examples if required
 # Update this list as you include more examples
 if(PROJECT_BUILD_EXAMPLES)
   add_subdirectory(examples/example1)
   add_subdirectory(examples/example2)
 endif()
+
